@@ -23,12 +23,12 @@ RefDBC is a cutting-edge remote sensing (RS) image compression approach, present
 
 4. Training: To train the RefDBC models with different compression baselines (e.g., RefDBC+JPEG2000, RefDBC+HEVC, and RefDBC+GMM), run the following command:
    ```bash
-   python main.py --save_dir ./train/SATELLITE/TTSR+GMM --reset True --log_file_name train.log --num_gpu 1 --num_workers 0 --dataset SATELLITE --dataset_dir G:/WHW/RS_compress/satellite --n_feats 64 --lr_rate 1e-4 --lr_rate_dis 1e-4 --lr_rate_lte 1e-5 --rec_w 1 --per_w 1e-2 --tpl_w 1e-2 --adv_w 1e-3 --batch_size 2 --num_init_epochs 10 --num_epochs 200 --print_every 600 --save_every 10 --train_crop_size 32
+   python main.py --save_dir ./train/SATELLITE/TTSR+GMM --reset True --log_file_name train.log --num_gpu 1 --num_workers 0 --dataset SATELLITE --dataset_dir path/of/your/data/set --n_feats 64 --lr_rate 1e-4 --lr_rate_dis 1e-4 --lr_rate_lte 1e-5 --rec_w 1 --per_w 1e-2 --tpl_w 1e-2 --adv_w 1e-3 --batch_size 8 --num_init_epochs 10 --num_epochs 200 --print_every 600 --save_every 10
 
 
 5. Test: to test the pretrained model on Spot-5 test dataset
    ```bash
-   python main.py --save_dir ./eval/TTSR_GMM --reset True  --log_file_name eval.log  --eval True  --eval_save_results True  --usegmm True  --num_workers 0  --dataset SATELITE  --dataset_dir ../compression-TTSR/satelite  --model_path ./pretrained/model_x2_compress.pt
+   python main.py --save_dir ./eval/TTSR_GMM --reset True  --log_file_name eval.log  --eval True  --eval_save_results True  --usegmm True  --num_workers 0  --dataset SATELITE  --dataset_dir /path/of/your/data/set  --model_path /path/of/your/pretrained/model
 
 ## Citation
 
