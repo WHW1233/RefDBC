@@ -18,7 +18,8 @@ RefDBC is a cutting-edge remote sensing (RS) image compression approach, present
 
 2. Data Preparation: Prepare your RS image dataset according to the guidelines provided in the `./dataset` folder. Organize the training and test data accordingly.
 
-3. Pretrained Model: Download the pretrained model using the provided link from Baidu Netdisk.
+3. Pretrained Model: Download the pretrained model using the provided link from Baidu Netdisk. 链接: https://pan.baidu.com/s/1gcLrcMHK5uPX3RQeYmqZrA 
+提取码:sg18
 
 4. Training: To train the RefDBC models with different compression baselines (e.g., RefDBC+JPEG2000, RefDBC+HEVC, and RefDBC+GMM), run the following command:
    ```bash
