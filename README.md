@@ -17,7 +17,7 @@ RefDBC is a cutting-edge remote sensing (RS) image compression approach, present
 1. Requirements: Ensure that you have the required dependencies installed. Check the `requirements.txt` file for the necessary libraries, including Pytorch.
 
 2. Data Preparation: Prepare your RS image dataset according to the guidelines provided in the `./dataset` folder. Organize the training and test data accordingly.
-
+链接：https://pan.baidu.com/s/1e-9wvRqM51kuh-X7FU84LQ  提取码：bqo2
 3. Pretrained Model: Download the pretrained model using the provided link from Baidu Netdisk. 链接: https://pan.baidu.com/s/1gcLrcMHK5uPX3RQeYmqZrA 
 提取码:sg18
 
