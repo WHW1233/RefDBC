@@ -11,8 +11,8 @@ from PIL import Image
 from compression_data import H_conpress
 import time
 import sys
-sys.path.append('D:/文件DA/科研/视频编码/代码/GMM_image_compression')
-import GMM_compression
+
+import model.GMM_com.GMM_compression as GMM_compression
 
 # level 0-5
 lr_com_level = 0
