@@ -7,7 +7,7 @@ class Vgg19(torch.nn.Module):
     def __init__(self, requires_grad=False, rgb_range=1):
         super(Vgg19, self).__init__()
         
-        vgg_pretrained_features = models.vgg19(pretrained=True).features
+        vgg_pretrained_features = models.vgg19(pretrained=False).features
 
         self.slice1 = torch.nn.Sequential()
         for x in range(30):

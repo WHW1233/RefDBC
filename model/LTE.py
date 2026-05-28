@@ -10,7 +10,7 @@ class LTE(torch.nn.Module):
         super(LTE, self).__init__()
         
         ### use vgg19 weights to initialize
-        vgg_pretrained_features = models.vgg19(pretrained=True).features
+        vgg_pretrained_features = models.vgg19(pretrained=False).features
 
         self.slice1 = torch.nn.Sequential()
         self.slice2 = torch.nn.Sequential()

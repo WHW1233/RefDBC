@@ -69,7 +69,7 @@ class ComputeS(nn.Module):
         N2=lrsr_lv2.size(3)//scale
         Point = []
         K = torch.mean(S)
-        if level[0] is 0 or K >= level[0]:
+        if level[0] == 0 or K >= level[0]:
             command = '95'
             Point = None
             return S, H, command, Point

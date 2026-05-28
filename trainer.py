@@ -27,7 +27,10 @@ class Trainer():
         self.model = model
         self.loss_all = loss_all
         self.device = torch.device('cpu') if args.cpu else torch.device('cuda')
-        self.vgg19 = Vgg19.Vgg19(requires_grad=False).to(self.device)
+        if not (args.test or args.eval):
+            self.vgg19 = Vgg19.Vgg19(requires_grad=False).to(self.device)
+        else:
+            self.vgg19 = None
         # self.ft_net = Fineturn_net(args).to(self.device)      #edit by whw
         if ((not self.args.cpu) and (self.args.num_gpu > 1)):
             self.vgg19 = nn.DataParallel(self.vgg19, list(range(self.args.num_gpu)))
@@ -176,7 +179,7 @@ class Trainer():
                         #     exit()
 
                     ### calculate psnr and ssim
-                    if command is not 'xx':
+                    if command != 'xx':
                         cnt += 1
                         _psnr, _ssim = calc_psnr_and_ssim(sr.detach(), hr.detach())
                         self.logger.info('batch %f PSNR & SSIM: %.2f, %.4f' %(i_batch, _psnr, _ssim))

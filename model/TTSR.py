@@ -78,7 +78,7 @@ class TTSR(nn.Module):
             print('is evaling')
             # hr , bits = self.Compress_jpeg(hr, idx=idx, rate=16)
             # lr, bits = self.Compress_normal(lr, idx=idx, level=0)
-            if command is '95':
+            if command == '95':
                 S, H, _, _ = self.ComputeS(lrsr_lv2, ref_lv2)
 
             # 导入GMM模型
@@ -103,11 +103,11 @@ class TTSR(nn.Module):
             # lr = clipped_recon_image * 2. - 1.
             # bits = bpp * lr.size(-2) * lr.size(-1) / 8
 
-            if command is '90':
+            if command == '90':
                 S, R_lv2_star_arg, ref, bits_other, ref_lv1, ref_lv2 = self.Compress_SH(S, H, ref, hr, ref_lv1, ref_lv2, hr_lv1, hr_lv2, Point, idx=idx)
                 bits += bits_other
 
-            if command is '70':
+            if command == '70':
                 S, H, _, _ = self.ComputeS(lrsr_lv2, ref_lv2)       # test 1.21
                 S, R_lv2_star_arg, ref, bits_other, ref_lv1, ref_lv2 = self.Compress_SH(S, H, ref, hr, ref_lv1, ref_lv2, hr_lv1, hr_lv2, Point, idx=idx)
                 bits += bits_other
@@ -136,7 +136,7 @@ class TTSR(nn.Module):
         T_lv2, T_lv1 = self.Transfer(H, lrsr_lv2, ref_lv1, ref_lv2)
 
 
-        if command is not '00':
+        if command != '00':
             sr = self.MainNet(lr, S, T_lv2, T_lv1)
         return sr, S_old, lr, T_lv2, T_lv1, Point, command, mse_loss, bpp
 
