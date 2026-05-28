@@ -96,7 +96,8 @@ If you find this code useful in your research, please consider citing the follow
   title={Uplink-Assist Downlink Remote Sensing Image Compression via Historical Referencing},
   author={WHW et al.},
   journal={IEEE Transactions on Geoscience and Remote Sensing (TGRS)},
-  year={2023}
+  year={2023},
+  doi={10.1109/TGRS.2023.3315725}
 }
 ```
 *(Please replace with the official citation once available)*
